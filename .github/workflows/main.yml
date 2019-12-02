@@ -1,0 +1,16 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Test the action
+    steps:
+    # To use this repository's private action, you must check out the repository
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Test the Action Step
+      id: test-action
+      uses: ./ # Uses an action in the root directory
+      with:
+        replicated-app: 'kots-dex'
+        replicated-api-token: ${{ secrets.REPLICATED_API_TOKEN }}
