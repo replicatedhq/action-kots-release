@@ -14,9 +14,6 @@ inputs:
     description: 'Folder containing KOTS application manifests'
     required: true
     default: 'manifests'
-outputs:
-  time: # id of output
-    description: 'The time we greeted you'
 runs:
   using: 'docker'
   image: 'Dockerfile'
