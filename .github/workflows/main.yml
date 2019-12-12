@@ -1,17 +1,16 @@
-name: Replicated KOTS Release
+name: Test the GitHub action in this Repository
 on: [push]
 
 jobs:
   test_action_job:
     runs-on: ubuntu-latest
-    name: Test the action
+    name: Test the GitHub action in this Repository
     steps:
-    # To use this repository's private action, you must check out the repository
     - name: Checkout
       uses: actions/checkout@v1
     - name: Test this Action
       id: test-action
-      uses: ./ # Uses an action in the root directory
+      uses: ./
       with:
         replicated-app: 'kots-dex'
         replicated-api-token: ${{ secrets.REPLICATED_API_TOKEN }}

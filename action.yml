@@ -1,6 +1,5 @@
-# action.yml
-name: 'KOTS release'
-description: 'Create a KOTS release on a channel'
+name: 'Replicated KOTS release'
+description: 'Create a Replicated KOTS release on a channel'
 inputs:
   replicated-app:
     description: 'Replicated App Slug'
@@ -10,15 +9,15 @@ inputs:
     description: 'Replicated API Token'
     required: true
     default: ''
-  manifests-folder:
-    description: 'Folder containing KOTS application manifests'
+  yaml-dir:
+    description: 'Directory containing KOTS application manifests'
     required: true
     default: 'manifests'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - '/replicated release create --promote=${GITHUB_REF} --ensure-channel --yaml-dir=${{ inputs.manifests-folder }} --release-notes="GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})" --version=${GITHUB_SHA::7}'
+    - '/replicated release create --promote=${GITHUB_REF} --ensure-channel --yaml-dir=${{ inputs.yaml-dir }} --release-notes="GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})" --version=${GITHUB_SHA::7}'
   env:
     REPLICATED_APP: ${{ inputs.replicated-app }}
     REPLICATED_API_TOKEN: ${{ inputs.replicated-api-token }}
