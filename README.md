@@ -24,6 +24,7 @@ jobs:
       with:
         replicated-app: 'my-great-app'
         replicated-api-token: ${{ secrets.REPLICATED_API_TOKEN }}
+        yaml-dir: manfests
 ```
 
 ### Inputs
