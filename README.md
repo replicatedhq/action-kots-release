@@ -37,7 +37,7 @@ The application slug or ID for this application. This can be found at [vendor.re
 
 A Replicated API token (create one at [vendor.replicated.com](https://vendor.replicated.com/team/tokens)).
 
-#### manifests-folder
+#### yaml-dir
 
 A directory containing KOTS manifests, defaults to `./manifests`.
 
