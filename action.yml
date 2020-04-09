@@ -16,7 +16,7 @@ inputs:
   release-notes:
     description: 'Release notes for the promoted release'
     required: true
-    default: 'GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})'
+    default: '"GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})"'
   promote-channel:
     description: 'Channel to promote the release into'
     required: true
