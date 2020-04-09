@@ -41,6 +41,17 @@ A Replicated API token (create one at [vendor.replicated.com](https://vendor.rep
 
 A directory containing KOTS manifests, defaults to `./manifests`.
 
+#### release-notes
+
+The release notes for the promoted release, defaults to `GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})`.
+
+#### promote-channel
+
+The channel to promote the release into, defaults to `${GITHUB_REF}`.
+
+#### version
+
+The version number to set, defaults to first 7 characters of the commit SHA.
 
 ### Limiting to specific branches or patterns
 
