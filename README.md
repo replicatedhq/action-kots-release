@@ -43,7 +43,7 @@ A directory containing KOTS manifests, defaults to `./manifests`.
 
 #### release-notes
 
-The release notes for the promoted release, defaults to `GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})`.
+The release notes for the promoted release, defaults to `GitHub Action release of ${GITHUB_REF} triggered by ${GITHUB_ACTOR}: [${GITHUB_SHA::7}](https://github.com/${GITHUB_REPOSITORY}/commit/${GITHUB_SHA})`. If your message includes `"` they must be shell-escaped (`\"`).
 
 #### promote-channel
 
